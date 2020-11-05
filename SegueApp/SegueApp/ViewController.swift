@@ -12,7 +12,30 @@ class ViewController: UIViewController {
     var userName = ""
 
     @IBOutlet weak var nameTextField: UITextField!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear called")
+        //görünüm gözüktüğünde çalıştırılcak kod bloğu
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear called")
+        nameTextField.text = ""
+        //görünüm gözükecekken çalıştırılcak kod bloğu
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        print("viewDidDisappear called")
+        //
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        print("viewWillDisappear called")
+        // görünümün görünürlüğü kaybolacakken çalıştırılcak kod bloğu
+    }
+    
     override func viewDidLoad() {
+        print("viewDidLoad called")
+        //görünüm yüklendiğinde çalıştırılcak kod bloğu
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
