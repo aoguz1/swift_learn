@@ -28,7 +28,9 @@ view.addSubview(myLabel)   // ekledigimiz elemani ekrana cizdirdik
 
 oluşturduğumu buton nesnesine addTarget ile ilgili aksiyonarı verip kontrol edebiliriz.
 
-`addTarget(self[içinde bulunduğumuz viewControlleri işaret ediyoruz.], action: #selector(ViewController.myAction)[sellector ile fonksiyonu işaret ediyoruz ViewController üzerinden myAction fonksiyonunun içinde yazanları işaret ediyoruz], for: UIControl.Event.touchUpInside [bu kısımda dokunma hareketini kontrol ediyoruz.])`
+```swift
+addTarget(self[içinde bulunduğumuz viewControlleri işaret ediyoruz.], action: #selector(ViewController.myAction)[sellector ile fonksiyonu işaret ediyoruz ViewController üzerinden myAction fonksiyonunun içinde yazanları işaret ediyoruz], for: UIControl.Event.touchUpInside [bu kısımda dokunma hareketini kontrol ediyoruz.])
+```
 
 ```swift
 {
