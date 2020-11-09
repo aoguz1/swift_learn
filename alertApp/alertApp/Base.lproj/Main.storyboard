@@ -80,7 +80,7 @@
                     <connections>
                         <outlet property="passwordAgainTextField" destination="IHb-Av-wgZ" id="U2G-fJ-efF"/>
                         <outlet property="passwordTextField" destination="kuO-MF-rQm" id="YO9-wB-arV"/>
-                        <outlet property="userNameTextField" destination="O0d-aG-QYK" id="wU9-0h-elJ"/>
+                        <outlet property="userNameTextField" destination="O0d-aG-QYK" id="812-or-2eR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
