@@ -19,10 +19,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func saveButton(_ sender: Any) {
-      
-    
-        
-        
         if userNameTextField.text == "" {
             alert(titleInput: "Kullanıcı Adı Boş", messageInfo: "Lütfen kullanıcı adıızı giriniz")
         } else if passwordTextField.text == ""{
@@ -44,8 +40,6 @@ class ViewController: UIViewController {
         
         // UIAlertController(title: "Burada vereceğimiz mesajı belirtiyoruz", message: "Alert mesaj açıklamsı", preferredStyle: UIAlertController.Style.alert (vereceğimiz alert tipini belirliyoruz))
         // self.present(burada alert nesnesi bekliyor, animated:  //animasyon olup olamaycağını bool olarak belirtiyoruz, completion: işlem olduktan sonra herhangi bir işlem yapılıp yapılmayacağını söylüyoruz)
-        
-        
     }
 
 }
