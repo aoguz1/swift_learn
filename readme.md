@@ -146,6 +146,28 @@ UIAlertAction nesnesi ile alertin butonlarını oluşturup tıklandığında han
 
 ```
 
+### Gesture (Jest Algılayıcılar)
+
+Gestureler ekran üzerindeki tıklama dokunma hareketlerini algılayıcı ve bunları yönetebileceğimiz tipteki jest algılayıcılardır.
+
+örneğin bir resim üzerinde jest algılayıcıları kullanmak istersek 
+
+```swift
+ imageView.isUserInteractionEnabled = true
+
+ let  gestureRecognizer = UITapGestureRecognizer(target: self [bu özeliği viewController üzerinden kullanacağımızı belirtiyoruz] , action: #selector(changePic) [bu işlem olduğunda oluşacak işlemi sellector olarak tanımlıyoruz])
+
+ imageView.addGestureRecognizer(gestureRecognizer) 
+ // burada da imageview nesnesine gesture özelliğini ekliyoruz.
+
+
+  @objc func changePic()  {
+      // burada işlem gerçekleştiğinde yapcağımız işlemleri yönetiyoruz.
+    }
+
+
+
+```
 
 
 
