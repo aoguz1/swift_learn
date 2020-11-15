@@ -170,6 +170,22 @@ Gestureler ekran üzerindeki tıklama dokunma hareketlerini algılayıcı ve bun
 ```
 
 
+### Timer 
+
+Timer nesnesi ile yazdığımız kod paraçalarını belirli zaman aralıklarında çalıştıran yapıdır.
+
+ ```swift 
+
+ timer  = Timer.scheduledTimer(timeInterval: 1[zaman aralığı kaç saniyede bir işlemi tekrarlaması gerektiğini yazıyoruz.], target: self [burada tanımladığımız alan olan viewContolleri işaret etmek için self kullanıyoruz], selector: #selector(timerFunc) [burada yapılacak işlemler], userInfo: nil, repeats: true [tekrar ediğ etmeyeceğini kontrol ediyoruz.])
+
+
+     @objc func timerFunc(){
+        //yapılcak işlemler
+    }
+ 
+ ```
+
+
 
 
  
