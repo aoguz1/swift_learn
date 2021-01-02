@@ -12,7 +12,7 @@ if ve let swift içinde oldukça fazla kullanılan yapılardan
 
 
 
-1- UIKit Kütüphanesini kullanrak ekran nesne oluşturmak. 
+### 1- UIKit Kütüphanesini kullanrak ekran nesne oluşturmak. 
 
 
 ```swift
@@ -24,7 +24,7 @@ view.addSubview(myLabel)   // ekledigimiz elemani ekrana cizdirdik
 ```
 
 
-2- butona aksiyon ekleme 
+### 2- butona aksiyon ekleme 
 
 oluşturduğumu buton nesnesine addTarget ile ilgili aksiyonarı verip kontrol edebiliriz.
 
@@ -48,7 +48,7 @@ addTarget(self[içinde bulunduğumuz viewControlleri işaret ediyoruz.], action:
 ```
 
 
-3 -User Defaults ile küçük verileri (key, value) şeklinde telefon hafızasında saklama 
+### 3 -User Defaults ile küçük verileri (key, value) şeklinde telefon hafızasında saklama 
 
 kontrol etmek için saklayacağımız değişkenleri User Defaults altında saklamalıyız bu yüzden onlara ulaşabilmek için key vereceğiz
 
@@ -77,7 +77,7 @@ UserDefaults.standard.set(surnameTextField.text, forKey: "surname")
 
 
 
-#### Uygulama döngüsü 
+### Uygulama döngüsü 
 
 ```swift
 
@@ -184,6 +184,59 @@ Timer nesnesi ile yazdığımız kod paraçalarını belirli zaman aralıkların
     }
  
  ```
+
+
+ ### TableView 
+
+Tableview uygulamalarda kişinin karşısına satırlardan olusan ifadeleri göstermek için kullanılan yapıdır.
+
+Tableview oluşturmak için şunları yapmalıyız.
+
+1- bulunduğumuz classa tableviewi kullanmak için gerekli sınıfları ekleyelim 
+
+```swift
+
+class TableView : UIViewController,UITableViewDelegate, UITableViewDataSource {
+
+
+}
+
+```
+
+
+2- kod içinde cellForRowAt ve  numberOfRowsInSection fonksiyonlarinin olusturalim 
+
+- cellForRowAt = hucre icindeki argumanlari temsil eder
+- numberOfRowsInSection = table view icindeki row sayisini temsil eder
+
+```swift
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.self.textLabel = "test"
+        return cell 
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //code
+    }
+```
+
+3- tanimladigimiz tableview nesnesine ulasarak duzenlemeler yapalim 
+
+```swift
+
+ @IBOutlet weak var tableView: UITableView!
+
+ override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+           
+    }
+
+```
+
+duzenlemelerini yaparak tableview  nesnesini kullanabiliriz
 
 
 
