@@ -218,6 +218,20 @@ class TableView : UIViewController,UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //code
     }
+
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // delete olma durumunda yapilacak islemler
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+        }
+    }
+
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+       //uzerine tiklanma durumunda yapilan islemleri buradan yonetiyoruz
+       // indexpath tableView da tiklanan satiri alir.
+        
+    }
 ```
 
 3- tanimladigimiz tableview nesnesine ulasarak duzenlemeler yapalim 
