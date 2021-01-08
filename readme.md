@@ -253,6 +253,90 @@ class TableView : UIViewController,UITableViewDelegate, UITableViewDataSource {
 duzenlemelerini yaparak tableview  nesnesini kullanabiliriz
 
 
+### Init - Consructor Kullanımı 
+
+- Class yapıları programlamada oldukça kullanılan yapılardandır. Classlarla birlikte kullanılan yapılardan biri Constuctor(kurucu method) yani class da ki ilk çalışacak kod bloğudur. Bunun karşılığı swifte init yapısıdır.
+
+
+```swift
+import Foundation
+
+let ugur = Musician(nameInit: "Ugur", ageInit: 12, insturmentInit: "Keman")
+
+print(ugur.name)
+
+
+```
+
+
+
+```swift
+class Musician {
+    
+    var name : String
+    var age : Int
+    var insturment : String 
+    // bu şekilde class içinde kullacanacağımız değişkenleri initialize ediyoruz.
+    
+    init(nameInit: String , ageInit: Int , insturmentInit: String) {
+        // Constructor
+        // İnit sınıfttan nesne üretildiğinde ilk çalışacak kod bloğu
+        // Genel olarak class gibi yapılarda consructorlar çoğunlukla kullanılmakta
+        name = nameInit
+        age =  ageInit
+        insturment  = insturmentInit
+        
+
+        // sonrasında constuctorda bunları init içinde tanımladığımız değerler ile eşliyoruz.
+    }
+    
+}
+```
+
+### Enum
+
+Enum yapısı kategorilendirme için kullanılır.
+
+```swift
+
+class Musician {
+    
+    enum MusicianType {
+        case LeadGuitar
+        case Vocalist
+        case Bassist
+        case Violenist     
+    }
+
+    // enum olarak tanımlanan değerler initialize edilirken belirlediğimiz isme göre initialize edilir.
+      
+    var type : MusicianType
+    
+    init(typeInit: MusicianType) {
+        type = typeInit  
+    }
+}
+```
+
+```swift
+
+let ugur = Musician(typeInit: .Violenist)
+
+print(ugur.type)
+
+```
+
+
+
+
+
+
+
+
+ 
+
+
+
 
 
  
