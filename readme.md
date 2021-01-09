@@ -327,6 +327,14 @@ print(ugur.type)
 ```
 
 
+### Erişilebilirlik seviyeleri 
+
+- Private : Sadece bulunduğu sınıf içerisinden ulaşılabilir 
+
+- Fileprivate : Bulunuduğu .swift dosyası içinden ulaşılabilir. 
+
+- Internal : Default olarak gelen erişilebilirlik durumudur.
+
 
 
 
