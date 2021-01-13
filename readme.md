@@ -333,7 +333,16 @@ print(ugur.type)
 
 - Fileprivate : Bulunuduğu .swift dosyası içinden ulaşılabilir. 
 
-- Internal : Default olarak gelen erişilebilirlik durumudur.
+- Internal : Default olarak gelen erişilebilirlik durumudur.    
+
+
+### Core Data Nedir? 
+
+iOS içinde tıpkı user defaults gibi verileri tutabildiğimiz yerdir. Xcode içinde tıpkı bir veritabanı tablolarını oluşturabildiimiz bir yapıdır. 
+
+Core data ile ilgili daha detaylı bilgi için : https://medium.com/turkishkit/core-data-ile-veri-depolama-75b71ef8552e 
+
+
 
 
 
