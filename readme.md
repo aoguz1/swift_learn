@@ -208,6 +208,7 @@ class TableView : UIViewController,UITableViewDelegate, UITableViewDataSource {
 
 - cellForRowAt = hucre icindeki argumanlari temsil eder
 - numberOfRowsInSection = table view icindeki row sayisini temsil eder
+- 
 
 ```swift
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -341,6 +342,46 @@ print(ugur.type)
 iOS içinde tıpkı user defaults gibi verileri tutabildiğimiz yerdir. Xcode içinde tıpkı bir veritabanı tablolarını oluşturabildiimiz bir yapıdır. 
 
 Core data ile ilgili daha detaylı bilgi için : https://medium.com/turkishkit/core-data-ile-veri-depolama-75b71ef8552e 
+
+Core Data üzerind ekleme silme gibi işlemlerin yapılması : 
+
+CoreData üzerinde ilgili işlemlerin yapılması için CoreData ile bir proje başlattığımızda proje dosyalarımızın içinde AppDelegate.swift dosyası içerisinde bulunan kod dizinleri ile proje içinde core data işlemlerini gerçekleştiriyoruz. Fakat CoreData'yı kullanabilmek için appdelegate.swift dosyasındaki context üzerinden işlemleri yapacağız.
+
+ - Create (save)
+
+ ```swift
+ let appDelegate = UIApplication.shared.delegate as! AppDelegate // delegate tanimlasini yapiyoruz
+        let context = appDelegate.persistentContainer.viewContext // appDelegate icinden contexte ulasiyoruz
+        
+        let newPainting = NSEntityDescription.insertNewObject(forEntityName: "Paintings", into: context) 
+        /* bu kisimda entitiy yani verilerimizi tuttugumuz dokumaninn ismini tanimliyoruz. Sonrasinda new painting degiskeni ile CoreData uzerine ekleme islemlerini gerceklestiriyoruz
+        
+        */
+    
+        //Attributes
+        
+        newPainting.setValue(nameText.text!, forKey: "name")
+        newPainting.setValue(artistText.text!, forKey: "artist")
+        
+        if let year = Int(yearText.text!) {
+            newPainting.setValue(year, forKey: "year")
+        }
+        
+        newPainting.setValue(UUID(), forKey: "id")
+        
+        let data = imageView.image!.jpegData(compressionQuality: 0.5)
+        
+        newPainting.setValue(data, forKey: "image")
+        
+        do {
+            try context.save()
+            print("success")
+        } catch {
+            print("error")
+        }
+ 
+ ```
+
 
 
 
